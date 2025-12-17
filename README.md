@@ -6,6 +6,14 @@ This project was built as part of a technical assignment and focuses on **code q
 
 ---
 
+#URL
+
+ frontend URL : https://admirable-beignet-11c47a.netlify.app/
+ 
+ backend URL : https://task-backend-8zx5.onrender.com
+
+---
+
 ## ✨ Features
 
 * Create a new task
