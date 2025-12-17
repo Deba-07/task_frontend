@@ -1,16 +1,214 @@
-# React + Vite
+# Task Manager – MERN Stack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple, modern **Task Manager web application** built using the **MERN stack**. The app allows users to create, view, and delete tasks with a clean UI, smooth animations, and a production-ready architecture.
 
-Currently, two official plugins are available:
+This project was built as part of a technical assignment and focuses on **code quality, UX, and real-world best practices**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Create a new task
+* View all created tasks
+* Delete tasks
+* Loading and success states
+* Responsive design (mobile → desktop)
+* Smooth animations using Framer Motion
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠 Tech Stack
+
+### Frontend
+
+* React (Vite)
+* Tailwind CSS
+* Framer Motion
+* Lucide React (icons)
+* Lottie (hero animation)
+
+### Backend
+
+* Node.js
+* Express.js
+* MongoDB Atlas
+* Mongoose
+
+### Deployment
+
+* Frontend: Vercel
+* Backend: Render
+* Database: MongoDB Atlas
+
+---
+
+## 📂 Project Structure
+
+### Backend
+
+```
+backend/
+ ├── config/
+ │    └── db.js
+ ├── models/
+ │    └── Task.js
+ ├── controllers/
+ │    └── taskController.js
+ ├── routes/
+ │    └── taskRoutes.js
+ ├── server.js
+ └── .env
+```
+
+### Frontend
+
+```
+frontend/
+ ├── src/
+ │    ├── components/
+ │    ├── pages/
+ │    ├── api/
+ │    ├── App.jsx
+ │    └── main.jsx
+ └── .env
+```
+
+---
+
+## ⚙️ Setup Instructions (Local)
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone <your-repo-url>
+cd task-manager
+```
+
+---
+
+### 2️⃣ Backend Setup
+
+```bash
+cd backend
+npm install
+```
+
+Create a `.env` file in the backend directory:
+
+```
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+FRONTEND_URL=http://localhost:5173
+```
+
+Run the backend:
+
+```bash
+npm run dev
+```
+
+Backend will run at:
+
+```
+http://localhost:5000
+```
+
+---
+
+### 3️⃣ Frontend Setup
+
+```bash
+cd frontend
+npm install
+```
+
+Create a `.env` file in the frontend directory:
+
+```
+VITE_API_BASE_URL=http://localhost:5000/api
+```
+
+Run the frontend:
+
+```bash
+npm run dev
+```
+
+Frontend will run at:
+
+```
+http://localhost:5173
+```
+
+---
+
+## 🔗 API Endpoints
+
+| Method | Endpoint       | Description       |
+| ------ | -------------- | ----------------- |
+| POST   | /api/tasks     | Create a new task |
+| GET    | /api/tasks     | Get all tasks     |
+| DELETE | /api/tasks/:id | Delete a task     |
+
+### Task Schema
+
+```
+{
+  title: String (required),
+  createdAt: Date
+}
+```
+
+---
+
+## 🌍 Deployment Details
+
+### Frontend (Vercel)
+
+* Uses environment variable for API base URL
+* `.env.production`
+
+```
+VITE_API_BASE_URL=https://dashboard.render.com/web/srv-d513vhl6ubrc73db17eg
+```
+
+### Backend (Render)
+
+* Uses environment variables for DB and frontend origin
+
+```
+MONGO_URI=...
+FRONTEND_URL=https://admirable-beignet-11c47a.netlify.app/
+```
+
+CORS is configured to allow only trusted frontend origins.
+
+---
+
+## 🧠 Design & Development Decisions
+
+* Used **separation of concerns** (routes, controllers, models)
+* Environment-based configuration for dev & production
+* Reusable components for scalability
+* Simple, gradient-based UI for better UX
+* Added animations carefully to enhance, not distract
+
+---
+
+## 🚀 Possible Improvements
+
+* Edit task functionality
+* Task completion status
+* Authentication
+* Pagination or filtering
+
+---
+
+## 👤 Author
+
+**Debasis Das**
+Frontend / Full Stack Developer
+
+---
+
+⭐ If you liked this project, feel free to star the repository!
